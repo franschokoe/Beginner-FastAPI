@@ -1,6 +1,8 @@
-from typing import Union , Generic ,TypeVar
 from fastapi import FastAPI 
-from pydantic import BaseModel , Field 
-
+from . import endpoints
 
 app = FastAPI()
+
+
+# endpoints in main
+app.include_router(endpoints)

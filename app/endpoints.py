@@ -1,6 +1,6 @@
 from fastapi import APIRouter , Path
-from typing import Optional
-from pydantic import BaseModel  #Creating the user
+# from typing import Optional
+# from pydantic import BaseModel  #Creating the user
 from . import schemas
 from ..minidb import students
 

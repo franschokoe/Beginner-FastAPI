@@ -8,10 +8,6 @@ router = APIRouter(
     tags=["Sub branch"]
 )
 
-# we use get to access from the database
-# @app.get("/")
-# def index():
-#     return {"name": "First Data"}
 
 @router.get("/students/{student_id}")
 def get_students(student_id:int = Path(description="The id of a student to view." , gt = 0)):
@@ -23,13 +19,7 @@ def get_students(student_id:int = Path(description="The id of a student to view.
         
         return students[student_id]
 
-# @app.get("/get-by-name")
-# def get_students(name:str):
-#     for student_id in students:
-#         if students[student_id]["name"] == name:
-#             return students[student_id]
-        
-#     return {"data": "not found"}
+
 # We use Post to create in the database
 @router.post("/create-student/{student_id}")
 def create_student(student_id : int , student: schemas.Student):
